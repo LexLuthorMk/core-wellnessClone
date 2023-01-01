@@ -1,0 +1,159 @@
+html{
+    font-family: sarif;
+    font-size: 10px;
+    color: #000;
+    box-sizing: border-box;
+}
+*{
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+img{
+    max-width: 100%;
+}
+
+/*header*/
+.hero .background{
+    height: 150px;
+    background-image: url(img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hero .header-section{
+    background-color:#011a01;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+.hero .logo{
+    width: 200px;
+}
+.hero .header-section h1{
+    font-size: 5rem;
+    font-weight: 100;
+    margin: 40px 0;
+}
+.hero .header-section .sub-heading{
+    font-size: 2.5rem;
+    font-weight: normal;
+    text-align: center;
+    line-height: 1.3;
+    max-width: 80%;
+}
+/*end of header*/
+
+/*content*/
+.content{
+    padding: 0 25px;
+    /*flex column for mobile*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*grid for desktop, change item max-width for grid*/
+}
+.content .item{
+    margin: 30px 10px;
+    padding: 0 15px;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.content .item .description{
+    max-width: 330px;
+}
+.content .item h1{
+    color: #0f0e0e;
+    font-size: 3rem;
+    font-weight: 100;
+    margin: 30px 0;
+}
+.content .item p{
+    font-size: 2rem;
+    line-height: 1.5;
+    color:gray;
+    margin: 30px 0;
+}
+.content .item .price{
+    font-style: italic;
+    color: #0f0e0e;
+    margin-bottom: 0;
+}
+.content .ending{
+    margin: 30px 25px;
+    max-width: 360px;
+}
+.content .ending h1{
+    font-size: 4rem;
+    font-weight: 300;
+}
+.content .ending hr{
+    border: 1px solid #000;
+}
+/*end of content*/
+
+/*footer*/
+footer{
+    max-width: 100%;
+    padding: 20px 15px 30px;
+    text-align: center;
+}
+footer p{
+    font-size: 1.5rem;
+    text-align: center;
+    color: gray;
+}
+footer a{
+    color: gray;
+}
+/*end of footer*/
+
+/*media query for desktop*/
+@media screen and (min-width: 900px){
+    /*content*/
+    .content{
+        display: grid;
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "plant-pot oil-diffuser coffee-cup"
+                                "ice-cube projector more";
+        justify-items: start;
+        align-items: start;
+    }
+    .content #item-1{
+        grid-area: plant-pot;
+    }
+    .content #item-2{
+        grid-area: oil-diffuser;
+    }
+    .content #Item-3{
+        grid-area: coffee-cup;
+    }
+    .content #item-4{
+        grid-area: ice-cube;
+    }
+    .content #item-5{
+        grid-area: projector;
+    }
+    .content .ending{
+        grid-area: more;
+        justify-self: normal;
+        align-self: center;
+    }
+    .content .item{
+        margin: 30px 10px;
+        padding: 0 15px;
+        max-width: 360px;
+    }
+    /*end of content*/
+    footer{
+        max-width: 100%;
+    }
+}
+/*end of media query for desktop*/
